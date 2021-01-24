@@ -1,0 +1,4 @@
+SELECT MIN(length),		
+		MAX(length),
+		AVG(length)
+FROM film;		
