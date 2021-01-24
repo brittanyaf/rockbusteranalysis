@@ -1,0 +1,2 @@
+SELECT mode() WITHIN GROUP (ORDER BY rating)
+FROM film;
