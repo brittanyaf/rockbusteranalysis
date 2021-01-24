@@ -1,0 +1,4 @@
+SELECT MIN(rental_duration),		
+		MAX(rental_duration),
+		AVG(rental_duration)
+FROM film;		
