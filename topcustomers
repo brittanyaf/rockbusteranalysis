@@ -1,0 +1,16 @@
+SELECT payment.customer_id, payment.amount,
+customer.first_name, customer.last_name, country.country, city.city, 
+SUM(payment.amount) AS "Total Amount Paid"
+FROM country
+JOIN city
+ON country.country_id = city.country_id
+JOIN address
+ON city.city_id = address.city_id
+JOIN customer
+ON customer.address_id = address.address_id
+JOIN payment
+ON payment.customer_id = customer.customer_id
+GROUP BY payment.customer_id, customer.first_name, customer.last_name, country.country, 
+city.city, payment.amount
+ORDER BY "Total Amount Paid" DESC
+LIMIT 5
